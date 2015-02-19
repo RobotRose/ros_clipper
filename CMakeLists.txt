@@ -7,3 +7,10 @@ catkin_package(
 #    CATKIN_DEPENDS
 #    DEPENDS 
 )
+
+include_directories(
+	${PROJECT_SOURCE_DIR}/include
+)
+
+add_library(polyclipping SHARED ${PROJECT_SOURCE_DIR}/src/clipper.cpp)
+target_link_libraries(polyclipping ${catkin_LIBRARIES})
